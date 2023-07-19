@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600"><rect x="0" y="0" width="900" height="600" fill="%23262931"></rect><defs><linearGradient id="grad1_0" x1="33.3%25" y1="0%" x2="100%" y2="100%"><stop offset="20%" stop-color="%2367416d" stop-opacity="1"></stop><stop offset="80%" stop-color="%2367416d" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad1_1" x1="33.3%25" y1="0%" x2="100%" y2="100%"><stop offset="20%" stop-color="%2367416d" stop-opacity="1"></stop><stop offset="80%" stop-color="%233d3853" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad1_2" x1="33.3%25" y1="0%" x2="100%" y2="100%"><stop offset="20%" stop-color="%23262931" stop-opacity="1"></stop><stop offset="80%" stop-color="%233d3853" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="0%" x2="66.7%25" y2="100%"><stop offset="20%" stop-color="%2367416d" stop-opacity="1"></stop><stop offset="80%" stop-color="%2367416d" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_1" x1="0%" y1="0%" x2="66.7%25" y2="100%"><stop offset="20%" stop-color="%233d3853" stop-opacity="1"></stop><stop offset="80%" stop-color="%2367416d" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_2" x1="0%" y1="0%" x2="66.7%25" y2="100%"><stop offset="20%" stop-color="%233d3853" stop-opacity="1"></stop><stop offset="80%" stop-color="%23262931" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(900, 0)"><path d="M0 432.7C-78.7 423.1 -157.4 413.5 -216.3 374.7C-275.3 335.9 -314.5 267.8 -347.3 200.5C-380 133.2 -406.4 66.6 -432.7 0L0 0Z" fill="%232f3143"></path><path d="M0 288.4C-52.5 282.1 -104.9 275.7 -144.2 249.8C-183.5 223.9 -209.7 178.5 -231.5 133.7C-253.4 88.8 -270.9 44.4 -288.4 0L0 0Z" fill="%23503d62"></path><path d="M0 144.2C-26.2 141 -52.5 137.8 -72.1 124.9C-91.8 112 -104.8 89.3 -115.8 66.8C-126.7 44.4 -135.5 22.2 -144.2 0L0 0Z" fill="%2367416d"></path></g><g transform="translate(0, 600)"><path d="M0 -432.7C81.1 -424.5 162.2 -416.3 216.3 -374.7C270.4 -333.1 297.5 -258 329.1 -190C360.6 -122 396.7 -61 432.7 0L0 0Z" fill="%232f3143"></path><path d="M0 -288.4C54.1 -283 108.2 -277.5 144.2 -249.8C180.3 -222.1 198.4 -172 219.4 -126.7C240.4 -81.3 264.4 -40.7 288.4 0L0 0Z" fill="%23503d62"></path><path d="M0 -144.2C27 -141.5 54.1 -138.8 72.1 -124.9C90.1 -111 99.2 -86 109.7 -63.3C120.2 -40.7 132.2 -20.3 144.2 0L0 0Z" fill="%2367416d"></path></g></svg>');
+  background-size: cover;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.nav-container {
+  position: relative;
+  display: inline-block;
+  max-width: 50px;
+  max-height: 50px;
+  overflow: visible;
+  outline: none;
+}
+.nav-container.is-active .nav-toggle:before, .nav-container.is-active .nav-toggle:after {
+  box-shadow: none;
+}
+.nav-container.is-active .nav-toggle:before {
+  transform: rotate(-45deg);
+}
+.nav-container.is-active .nav-toggle:after {
+  transform: rotate(45deg);
+}
+.nav-container.is-active .nav-items {
+  transform: translate(0, 0);
+}
+.nav-container .nav-toggle {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  margin-left: 20px;
+  z-index: 2;
+}
+.nav-container .nav-toggle:hover {
+  cursor: pointer;
+}
+.nav-container .nav-toggle:before, .nav-container .nav-toggle:after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 0;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 4px;
+  background: rgb(255, 255, 255);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.nav-container .nav-toggle:before {
+  box-shadow: 0 13.3333333333px 0 0 rgb(255, 255, 255);
+}
+.nav-container .nav-toggle:after {
+  box-shadow: 0 -13.3333333333px 0 0 rgb(255, 255, 255);
+}
+.nav-container .nav-items {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 300px;
+  max-width: 50vw;
+  width: 10vw;
+  height: 60vh;
+  z-index: 1;
+  padding: 80px 20px 20px 10px;
+  transition: transform 0.3s ease;
+  transform: translate(calc(-100% - 50px), 0);
+  background: #1b142e;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px 0;
+  align-content: start;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 11px 8px 50px 0px rgba(0,0,0,0.69)
+
+}
+.nav-container .nav-items .nav-item {
+  color: white;
+  background: #393053;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+.nav-container .nav-items .nav-item:hover {
+  cursor: pointer;
+  background: #635985;
+}
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.container .ChampCard {
+  position: relative;
+  width: 500px;
+  height: 230px;
+  padding: 15px;
+  background: linear-gradient(60deg, #151516 0%, #1d2229 100%);
+  overflow: hidden;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.container .ChampCard h2 {
+  z-index: 99;
+  position: absolute;
+  bottom: 25px;
+  right: 130px;
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.2s ease;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/*  */
+.container .ChampCard p {
+  z-index: 99;
+  position: absolute;
+  bottom: 30px;
+  right: 130px;
+  width: 150px;
+  color: #fff;
+  opacity: 0;
+  font-size: 8px;
+  text-align: right;
+  letter-spacing: 1px;
+  transition: 0.2s ease;
+}
+
+.container .ChampCard .icons {
+  width: 0;
+  height: 0;
+  transition: 0.2s ease;
+  opacity: 0.7;
+}
+
+.container .ChampCard .icons img {
+  position: relative;
+  z-index: 99;
+  top: 20px;
+  left: 425px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 30px;
+}
+
+.container .ChampCard .pic {
+  z-index: 100;
+  width: 395px;
+  height: 200px;
+  background-image: url(images/img1.jpg);
+  background-size: cover;
+  border-radius: 12px;
+  filter: grayscale(100%);
+  transition: 0.3s ease;
+}
+
+/*  */
+.container .ChampCard .button {
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  opacity: 1;
+  transition: 0.3s ease;
+  background-color: var(--button-color);
+  /* Using CSS variable for button color */
+}
+
+.container .ChampCard:hover button {
+  transform: scale(16.5);
+  opacity: 0.5;
+}
+
+.container .ChampCard:hover h2 {
+  bottom: 80px;
+  right: 50px;
+}
+
+.container .ChampCard:hover p {
+  opacity: 1;
+  right: 60px;
+}
+
+.container .ChampCard:hover span {
+  opacity: 0;
+  top: 80px;
+}
+
+.container .ChampCard:hover .pic {
+  filter: grayscale(0);
+  width: 470px;
+}
+
+.container .ChampCard2 .pic {
+  background-image: url(images/img2.jpg);
+  transition: 0.3s ease;
+}
+
+.container .ChampCard2 button {
+  background-color: #26c3a1;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
