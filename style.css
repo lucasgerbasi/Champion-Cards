@@ -15,6 +15,55 @@ body {
   scrollbar-color: transparent transparent;
 }
 
+#menu-nav {
+  max-width: 1000px;
+  margin: 10px auto;
+}
+ 
+#navigation-bar ul {
+  border-radius: 4px;
+  overflow: hidden;
+}
+#navigation-bar li {
+  float: left;
+  width: 16.5%;
+}
+#navigation-bar li:hover a::before {
+  right: 0;
+  left: 0;
+}
+#navigation-bar a {
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  padding: 20px 0;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+#navigation-bar a:hover {
+  color: #b35353;
+}
+#navigation-bar a::before {
+  content: "";
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  right: 50%;
+  left: 50%;
+  bottom: 0;
+  height: 2px;
+  background-color: #b35353;
+}
+#navigation-bar a:hover::before {
+  right: 0;
+  left: 0;
+}
+ 
+#navigation-bar li {
+	list-style: none;
+}
+
 .nav-container {
   position: relative;
   display: inline-block;
@@ -36,11 +85,11 @@ body {
   transform: translate(0, 0);
 }
 .nav-container .nav-toggle {
-  position: fixed;
+  position: absolute;
   width: 40px;
   height: 40px;
-  margin: 10px;
-  margin-left: 20px;
+  top: -70px;
+  right: 30px;
   z-index: 2;
 }
 .nav-container .nav-toggle:hover {
@@ -49,9 +98,8 @@ body {
 .nav-container .nav-toggle:before, .nav-container .nav-toggle:after {
   content: "";
   position: absolute;
-  top: 18px;
-  left: 0;
   transform: translate(0, 0);
+  top: 15px;
   width: 100%;
   height: 4px;
   background: rgb(255, 255, 255);
@@ -96,6 +144,11 @@ body {
   background: #635985;
 }
 
+.animation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .container {
   width: 100%;
@@ -117,7 +170,18 @@ body {
   margin-top: 15px;
   margin-bottom: 15px;
   border-radius: 20px;
+  transform: translateX(-40%);
+  transition: transform 1s ease;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.container.active .ChampCard {
+  transform: translateX(0);
+}
+
+.container .ChampCard.active {
+  transform: translateX(0);
+  transition-delay: 0.2s;
 }
 
 .container .ChampCard h2 {

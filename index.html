@@ -7,8 +7,18 @@
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
-
 <body>
+  <div id="menu-nav">
+    <div id="navigation-bar">
+      <ul>
+        <li><a href="#" class="tab" data-filter="all"><span>All</span></a></li>
+        <li><a href="#" class="tab" data-filter="top"><span>Top</span></a></li>
+        <li><a href="#" class="tab" data-filter="jg"><span>Jungle</span></a></li>
+        <li><a href="#" class="tab" data-filter="mid"><span>Middle</span></a></li>
+        <li><a href="#" class="tab" data-filter="bot"><span>Bottom</span></a></li>
+        <li><a href="#" class="tab" data-filter="supp"><span>Support</span></a></li>
+      </ul>
+    </div>
   <div class="nav-container" tabindex="0">
     <div class="nav-toggle"></div>
 
@@ -18,13 +28,41 @@
       <a class="nav-item" href="https://www.linkedin.com/in/lucas-gerbasi/">LinkedIn</a>
     </nav>
   </div>
+  <div class="animation-container">
   <div class="container">
+    <div class="ChampCard">
+      <a href="https://www.leagueoflegends.com/en-us/champions/aatrox/" target="_blank">
+        <h2>Aatrox</h2>
+        <p>Aatrox, a once honored defender of Shurima, became a greater threat after imprisonment, seeking apocalyptic
+          vengeance.</p>
+        <div class="icons">
+          <img class="role" src="images/top.svg" alt="top" data-role-filter="top">
+          <img src="images/Fighter.svg" alt="fighter"
+            style="filter: invert(83%) sepia(44%) saturate(392%) hue-rotate(356deg) brightness(92%) contrast(95%);">
+        </div>
+        <div class="pic"></div>
+        <button class="button" style="--button-color: #731013"></button>
+      </a>
+    </div>
+    <div class="ChampCard">
+      <a href="https://www.leagueoflegends.com/en-us/champions/aatrox/" target="_blank">
+        <h2>Ahri</h2>
+        <p>Ahri is a fox-like vastaya who can manipulate her prey's emotions and consume their essence.</p>
+        <div class="icons">
+          <img class="role" src="images/mid.svg" alt="mid" data-role-filter="mid">
+          <img src="images/Mage.svg" alt="mage"
+            style="filter: invert(83%) sepia(44%) saturate(392%) hue-rotate(356deg) brightness(92%) contrast(95%);">
+        </div>
+        <div class="pic"></div>
+        <button class="button" style="--button-color: #49d0eb"></button>
+      </a>
+    </div>
     <div class="ChampCard">
       <a href="https://www.leagueoflegends.com/en-us/champions/jinx/" target="_blank">
         <h2>Jinx</h2>
         <p>A manic and impulsive criminal from Zaun, Jinx lives to wreak havoc without care for the consequences. </p>
         <div class="icons">
-          <img src="images/bot.webp" alt="bot">
+          <img class="role" src="images/bot.webp" alt="bot" data-role-filter="bot">
           <img src="images/Marksman.svg" alt="Marksman" style="filter: invert(83%) sepia(44%) saturate(392%) hue-rotate(356deg) brightness(92%) contrast(95%);">
         </div>
         <div class="pic"></div>
@@ -32,24 +70,11 @@
       </a>
     </div>
     <div class="ChampCard">
-      <a href="https://www.leagueoflegends.com/en-us/champions/yasuo/" target="_blank">
-        <h2>Yasuo</h2>
-        <p>An Ionian of deep resolve, Yasuo is an agile swordsman who wields the air itself against his enemies.</p>
-        <div class="icons">
-          <img src="images/mid.svg" alt="mid">
-          <img src="images/Fighter.svg" alt="Fighter"
-          style="filter: invert(83%) sepia(44%) saturate(392%) hue-rotate(356deg) brightness(92%) contrast(95%);">
-        </div>
-        <div class="pic"></div>
-        <button class="button" style="--button-color: #3268a8"></button>
-      </a>
-    </div>
-    <div class="ChampCard">
       <a href="https://www.leagueoflegends.com/en-us/champions/naafiri/" target="_blank">
         <h2>Naafiri</h2>
         <p>A voracious predator, Naafiri is the leader of a dune hound pack in the barren lands of Shurima.</p>
         <div class="icons">
-          <img src="images/jg.svg" alt="jg">
+          <img class="role" src="images/jg.svg" alt="jg" data-role-filter="jg">
           <img src="images/Assassin.svg" alt="Assassin"
           style="filter: invert(83%) sepia(44%) saturate(392%) hue-rotate(356deg) brightness(92%) contrast(95%);">
         </div>
@@ -58,21 +83,21 @@
       </a>
     </div>
     <div class="ChampCard">
-      <a href="https://www.leagueoflegends.com/en-us/champions/aatrox/" target="_blank">
-        <h2>Aatrox</h2>
-        <p>Aatrox, a once honored defender of Shurima, became a greater threat after imprisonment, seeking apocalyptic
-          vengeance.</p>
+      <a href="https://www.leagueoflegends.com/en-us/champions/yasuo/" target="_blank">
+        <h2>Yasuo</h2>
+        <p>An Ionian of deep resolve, Yasuo is an agile swordsman who wields the air itself against his enemies.</p>
         <div class="icons">
-          <img src="images/top.svg" alt="top">
-          <img src="images/Fighter.svg" alt="fighter"
-            style="filter: invert(83%) sepia(44%) saturate(392%) hue-rotate(356deg) brightness(92%) contrast(95%);">
+          <img class="role" src="images/mid.svg" alt="mid" data-role-filter="mid">
+          <img src="images/Fighter.svg" alt="Fighter"
+          style="filter: invert(83%) sepia(44%) saturate(392%) hue-rotate(356deg) brightness(92%) contrast(95%);">
         </div>
         <div class="pic"></div>
-        <button class="button" style="--button-color: #731013"></button>
+        <button class="button" style="--button-color: #3268a8"></button>
       </a>
     </div>
   </div>
+</div>
 </body>
-<script src="script.js"></script>
+<script defer src="script.js"></script>
 
 </html>
