@@ -19,19 +19,22 @@ body {
   max-width: 1000px;
   margin: 10px auto;
 }
- 
+
 #navigation-bar ul {
   border-radius: 4px;
   overflow: hidden;
 }
+
 #navigation-bar li {
   float: left;
   width: 16.5%;
 }
+
 #navigation-bar li:hover a::before {
   right: 0;
   left: 0;
 }
+
 #navigation-bar a {
   color: #ffffff;
   font-size: 20px;
@@ -42,9 +45,11 @@ body {
   position: relative;
   transition: all 0.3s ease;
 }
+
 #navigation-bar a:hover {
   color: #b35353;
 }
+
 #navigation-bar a::before {
   content: "";
   transition: all 0.4s ease-in-out;
@@ -55,13 +60,14 @@ body {
   height: 2px;
   background-color: #b35353;
 }
+
 #navigation-bar a:hover::before {
   right: 0;
   left: 0;
 }
- 
+
 #navigation-bar li {
-	list-style: none;
+  list-style: none;
 }
 
 .nav-container {
@@ -72,18 +78,24 @@ body {
   overflow: visible;
   outline: none;
 }
-.nav-container.is-active .nav-toggle:before, .nav-container.is-active .nav-toggle:after {
+
+.nav-container.is-active .nav-toggle:before,
+.nav-container.is-active .nav-toggle:after {
   box-shadow: none;
 }
+
 .nav-container.is-active .nav-toggle:before {
   transform: rotate(-45deg);
 }
+
 .nav-container.is-active .nav-toggle:after {
   transform: rotate(45deg);
 }
+
 .nav-container.is-active .nav-items {
   transform: translate(0, 0);
 }
+
 .nav-container .nav-toggle {
   position: absolute;
   width: 40px;
@@ -92,10 +104,13 @@ body {
   right: 30px;
   z-index: 2;
 }
+
 .nav-container .nav-toggle:hover {
   cursor: pointer;
 }
-.nav-container .nav-toggle:before, .nav-container .nav-toggle:after {
+
+.nav-container .nav-toggle:before,
+.nav-container .nav-toggle:after {
   content: "";
   position: absolute;
   transform: translate(0, 0);
@@ -105,12 +120,15 @@ body {
   background: rgb(255, 255, 255);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .nav-container .nav-toggle:before {
   box-shadow: 0 13.3333333333px 0 0 rgb(255, 255, 255);
 }
+
 .nav-container .nav-toggle:after {
   box-shadow: 0 -13.3333333333px 0 0 rgb(255, 255, 255);
 }
+
 .nav-container .nav-items {
   position: fixed;
   top: 0;
@@ -130,15 +148,16 @@ body {
   align-content: start;
   margin: 5px;
   border-radius: 10px;
-  box-shadow: 11px 8px 50px 0px rgba(0,0,0,0.69)
-
+  box-shadow: 11px 8px 50px 0px rgba(0, 0, 0, 0.69)
 }
+
 .nav-container .nav-items .nav-item {
   color: white;
   background: #393053;
   padding: 10px;
   transition: background-color 0.3s ease;
 }
+
 .nav-container .nav-items .nav-item:hover {
   cursor: pointer;
   background: #635985;

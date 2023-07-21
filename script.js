@@ -1,3 +1,5 @@
+// start about me nav
+
 const nav = document.querySelector(".nav-container");
 
 if (nav) {
@@ -18,6 +20,10 @@ if (nav) {
     nav.classList.remove("is-active");
   });
 }
+
+// end about me nav
+
+// start slide in animation
 
 const container = document.querySelector('.container');
 const cards = document.querySelectorAll('.ChampCard');
@@ -43,6 +49,10 @@ const triggerAnimation = () => {
 // Add an event listener to trigger the animation when the page finishes loading
 window.addEventListener('load', triggerAnimation);
 
+// end slide in animation
+
+// start background image
+
 const backgroundImageUrls = [
   'images/img1.jpg',
   'images/img2.jpg',
@@ -51,6 +61,15 @@ const backgroundImageUrls = [
   'images/img5.jpg',
   'images/img6.jpg',
   'images/img7.jpg',
+  'images/img8.jpg',
+  'images/img9.jpg',
+  'images/img10.jpg',
+  'images/img11.jpg',
+  'images/img12.jpg',
+  'images/img51.jpg',
+  'images/img82.jpg',
+  'images/img150.jpg',
+
 
   // Add more image URLs as needed
 ];
@@ -63,8 +82,11 @@ picElements.forEach((picElement, index) => {
   picElement.style.backgroundImage = `url(${backgroundImageUrls[index]})`;
 });
 
-const tabs = document.querySelectorAll('.tab');
+// end background image
 
+// start tab functionality
+
+const tabs = document.querySelectorAll('.tab');
 
 // Set initial filter state to 'all'
 let filterValue = 'all';
@@ -89,10 +111,12 @@ tabs.forEach(tab => {
     // Update active state for tabs
     tabs.forEach(tab => tab.classList.remove('active'));
     tab.classList.add('active');
-    
+
     triggerAnimation();
   });
 });
 
 // Display all cards on initial load
 filterCards();
+
+// end tab functionality
