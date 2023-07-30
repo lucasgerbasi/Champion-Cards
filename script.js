@@ -25,29 +25,20 @@ if (nav) {
 
 // start slide in animation
 
-const container = document.querySelector('.container');
 const cards = document.querySelectorAll('.ChampCard');
 
-// Function to trigger the animation by adding the 'active' class with a delay
-const triggerAnimation = () => {
-  cards.forEach(card => {
-    card.classList.remove('active'); // Remove 'active' class from all cards
-  });
-
-  // Add a slight delay before starting the animation
-  setTimeout(() => {
-    cards.forEach((card, index) => {
-      // Calculate the delay based on the index of the card
-      const delay = index * 200; // Adjust the delay time as needed (milliseconds)
-      setTimeout(() => {
-        card.classList.add('active');
-      }, delay);
-    });
-  }, 10); // Adjust the delay time as needed (milliseconds)
+// Function to calculate animation delay based on card index
+const calculateAnimationDelay = (index) => {
+  // Adjust the delay time as needed (milliseconds)
+  const baseDelay = 1000;
+  const delayIncrement = 500;
+  return `${baseDelay + index * delayIncrement}ms`;
 };
 
-// Add an event listener to trigger the animation when the page finishes loading
-window.addEventListener('load', triggerAnimation);
+// Apply animation delays to each card
+cards.forEach((card, index) => {
+  card.style.setProperty('--animation-delay', calculateAnimationDelay(index));
+});
 
 // end slide in animation
 
@@ -91,6 +82,8 @@ const tabs = document.querySelectorAll('.tab');
 // Set initial filter state to 'all'
 let filterValue = 'all';
 
+
+
 // Function to filter the cards
 const filterCards = () => {
   cards.forEach(card => {
@@ -115,6 +108,7 @@ tabs.forEach(tab => {
     triggerAnimation();
   });
 });
+
 
 // Display all cards on initial load
 filterCards();

@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+@keyframes slideIn {
+  0% {
+    transform: translateX(-70px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -189,10 +200,12 @@ body {
   margin-top: 15px;
   margin-bottom: 15px;
   border-radius: 20px;
-  transform: translateX(-40%);
-  transition: transform 1s ease;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateX(-70px);
+  animation: slideIn 1s ease forwards var(--animation-delay);
 }
+
 
 .container.active .ChampCard {
   transform: translateX(0);
@@ -212,8 +225,8 @@ body {
   font-weight: 700;
   color: #fff;
   pointer-events: none;
-  transition: 0.2s ease;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: bottom 0.2s ease, right 0.2s ease;
 }
 
 /*  */
@@ -228,7 +241,7 @@ body {
   font-size: 8px;
   text-align: right;
   letter-spacing: 1px;
-  transition: 0.2s ease;
+  transition: opacity 0.2s ease, right 0.2s ease;
 }
 
 .container .ChampCard .icons {
@@ -272,13 +285,13 @@ body {
   cursor: pointer;
   outline: none;
   opacity: 1;
-  transition: 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   background-color: var(--button-color);
   /* Using CSS variable for button color */
 }
 
 .container .ChampCard:hover button {
-  transform: scale(16.5);
+  transform: scale(20);
   opacity: 0.5;
 }
 
